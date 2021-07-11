@@ -1,7 +1,9 @@
 package com.yantraQA.core;
 
 import com.google.common.base.Preconditions;
+import com.yantraQA.config.CoreConfig;
 import lombok.extern.log4j.Log4j2;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,9 +16,10 @@ public class Interact {
 
 	protected TestContext context;
 	private long timeOutInSeconds;
+	CoreConfig config = ConfigFactory.create(CoreConfig.class);
 
 	public Interact(){
-		timeOutInSeconds = 60;
+		timeOutInSeconds = config.browserExplicitWaitTimeOut();
 	}
 
 	public void clickElement(WebElement webElement) {

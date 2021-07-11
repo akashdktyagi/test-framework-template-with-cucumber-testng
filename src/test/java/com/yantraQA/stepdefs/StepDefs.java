@@ -30,6 +30,7 @@ public class StepDefs {
     public void i_search_for_a_product() {
         commonPageObjects.searchForProduct("Apple");
     }
+
     @Then("Search result is displayed")
     public void search_result_is_displayed() {
         commonPageObjects.validatePageTitleToCheckPageIsNavigated("Apple");

@@ -1,6 +1,5 @@
 package com.yantraQA.drivers;
 
-import org.aeonbits.owner.Config;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.logging.LogType;

@@ -3,9 +3,6 @@ package com.yantraQA.drivers;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import java.net.MalformedURLException;
-import java.util.Locale;
-
 public class DriverFactory {
 
     public static WebDriver createInstance(String browserName, String execType) {

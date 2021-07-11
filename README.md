@@ -3,6 +3,24 @@ test-framework-template-with-cucumber-testng
 
 ----
 
+### How to Trigger the Pack:
+* Bring the Selenium Grid Up: 
+  ```sh
+  docker-compose up
+  ```
+* Check localhost:4444, selenium grid UI should be displayed
+* Check localhost:7901 .. 7902 etc, Video feed should be up. Password is 'secret'. This is where you should see the video of the execution.
+* For triggering the exection on grid use below commands:
+```java
+mvn clean isntall -Pchrome-grid ==> for execution on chrome grid
+mvn clean install -Pfirefox-grid  ===> for execution on firefox grid
+mvn clean install -Dbrowser=chrome -DexecType=local  ===> to execute locally on chrome. Place the chromedriver in ur project's root
+mvn clean install -Dbrowser=firefox -DexecType=local  ===> to execute locally on firefox. Place the geckodriver in ur project's root
+
+Can use -Dcucmber.filter.tags="@smoke" with any of the above. Example:
+mvn clean isntall -Pchrome-grid -Dcucmber.filter.tags="@smoke"
+```
+
 * I have seen many Test Automation Professionals, specially Beginners and even mid senior level when it comes to creating a Test Automation Framework for their projects.
 
 * I agree it could be a daunting task and purpose of this article is to bring forth my thoughts  on what we should have in a "Test Automation Framework" and also to propose a working "Test Automation Framework Template", which could be used as a base for any future projects.
