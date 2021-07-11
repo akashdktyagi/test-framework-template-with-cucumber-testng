@@ -1,7 +1,7 @@
 package com.yantraQA.core;
 
-import com.google.inject.Inject;
 import com.yantraQA.config.CoreConfig;
+import com.yantraQA.drivers.DriverFactory;
 import io.cucumber.guice.ScenarioScoped;
 import io.cucumber.java.Scenario;
 import lombok.Data;
@@ -10,8 +10,6 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.util.concurrent.TimeUnit;
 
 @Log4j2
@@ -28,7 +26,9 @@ public class TestContext{
     CoreConfig coreConfig = ConfigFactory.create(CoreConfig.class);;
 
     public void invokeDriver(){
-        this.driver = new ChromeDriver();
+        String browser = (System.getProperty("browser")==null) ? "chrome" : System.getProperty("browser");
+        String execType = (System.getProperty("execType")==null) ? "local" : System.getProperty("execType");
+        this.driver = DriverFactory.createInstance(browser,execType);
         this.driver.manage().timeouts().implicitlyWait(coreConfig.browserImplicitWaitTimeOut(), TimeUnit.SECONDS);
         this.driver.manage().window().maximize();
         log.debug("Chrome browser Opened.");

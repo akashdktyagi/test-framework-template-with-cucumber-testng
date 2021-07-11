@@ -1,9 +1,6 @@
 package com.yantraQA.core;
 
 import com.google.common.base.Preconditions;
-import com.google.inject.Inject;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;

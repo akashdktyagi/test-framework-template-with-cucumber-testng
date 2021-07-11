@@ -16,4 +16,8 @@ public interface CoreConfig extends Config {
 
     @Key("browser.close") @DefaultValue("true")
     boolean closeBrowser();
+
+    @Key("selenium.grid.url")
+    String seleniumGridURL();
+
 }
