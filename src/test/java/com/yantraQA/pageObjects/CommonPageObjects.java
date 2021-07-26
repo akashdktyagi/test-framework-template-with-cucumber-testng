@@ -3,11 +3,13 @@ package com.yantraQA.pageObjects;
 import com.google.inject.Inject;
 import com.yantraQA.core.Interact;
 import com.yantraQA.core.TestContext;
+import io.cucumber.guice.ScenarioScoped;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import static org.assertj.core.api.Assertions.*;
 
 @Log4j2
+@ScenarioScoped
 public class CommonPageObjects extends Interact {
 
     By linkMyCart = By.id("nav-cart");
@@ -28,9 +30,11 @@ public class CommonPageObjects extends Interact {
     }
 
     public void clickOnReturnsAndOrders(){
+
         clickElement(linkAccountList);
         context.getScenario().log("Clicked on ReturnsAndOrders");
         log.debug("Clicked on ReturnsAndOrders");
+
     }
 
     public void clickOnAmazonPayLink(){

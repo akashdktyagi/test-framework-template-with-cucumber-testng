@@ -5,7 +5,7 @@ import org.aeonbits.owner.Config;
 @Config.Sources("classpath:CoreConfig.properties")
 public interface CoreConfig extends Config {
 
-    @Key("browser.app.url")
+    @Key("browser.app.url") @DefaultValue("")
     String browserAppURL();
 
     @Key("browser.implicit.timeout")

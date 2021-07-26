@@ -23,6 +23,7 @@ public class Interact {
 	}
 
 	public void clickElement(WebElement webElement) {
+		try { Thread.sleep(3000);}catch (InterruptedException e) { e.printStackTrace(); }
 		Preconditions.checkNotNull(webElement,"Object passed is Null. Unable to perform the operation");
 		WebDriverWait wait = new WebDriverWait(context.getDriver(), timeOutInSeconds);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webElement));
@@ -32,6 +33,7 @@ public class Interact {
 	}
 
 	public void clickElement(By by) {
+		try { Thread.sleep(3000);}catch (InterruptedException e) { e.printStackTrace(); }
 		Preconditions.checkNotNull(by,"Object passed is Null. Unable to perform the operation");
 		WebDriverWait wait = new WebDriverWait(context.getDriver(), timeOutInSeconds);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
@@ -40,6 +42,7 @@ public class Interact {
 	}
 	
 	public WebElement setElement(By by, String text) {
+		try { Thread.sleep(3000);}catch (InterruptedException e) { e.printStackTrace(); }
 		Preconditions.checkNotNull(by,"Object passed is Null. Unable to perform the operation");
 		WebDriverWait wait = new WebDriverWait(context.getDriver(), timeOutInSeconds);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
@@ -49,6 +52,7 @@ public class Interact {
 	}
 	
 	public String getAttribute(By by, String attName) {
+		try { Thread.sleep(3000);}catch (InterruptedException e) { e.printStackTrace(); }
 		Preconditions.checkNotNull(by,"Object passed is Null. Unable to perform the operation");
 		WebDriverWait wait = new WebDriverWait(context.getDriver(), timeOutInSeconds);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
@@ -58,6 +62,7 @@ public class Interact {
 	}
 	
 	public String getText(By by) {
+		try { Thread.sleep(3000);}catch (InterruptedException e) { e.printStackTrace(); }
 		Preconditions.checkNotNull(by,"Object passed is Null. Unable to perform the operation");
 		WebDriverWait wait = new WebDriverWait(context.getDriver(), timeOutInSeconds);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
@@ -67,12 +72,14 @@ public class Interact {
 	}
 
 	public String getTitle() {
+		try { Thread.sleep(3000);}catch (InterruptedException e) { e.printStackTrace(); }
 		String value = context.getDriver().getTitle();
 		log.debug("Title fetched: " + value);
 		return value;
 	}
 	
 	public List<WebElement> getListOfWebElements(By by){
+		try { Thread.sleep(3000);}catch (InterruptedException e) { e.printStackTrace(); }
 		Preconditions.checkNotNull(by,"Object passed is Null. Unable to perform the operation");
 		WebDriverWait wait = new WebDriverWait(context.getDriver(), timeOutInSeconds);
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
@@ -81,6 +88,7 @@ public class Interact {
 	}
 	
 	public boolean validateElementIsDisplayed(By by) {
+		try { Thread.sleep(3000);}catch (InterruptedException e) { e.printStackTrace(); }
 		Preconditions.checkNotNull(by,"Object passed is Null. Unable to perform the operation");
 		boolean b = context.getDriver().findElement(by).isDisplayed();
 		log.debug("Element is Displayed status: " + by.toString());
