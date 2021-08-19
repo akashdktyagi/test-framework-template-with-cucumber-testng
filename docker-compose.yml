@@ -10,7 +10,7 @@ services:
     depends_on:
       - selenium-hub
     environment:
-      - SE_NODE_MAX_SESSIONS=10
+      - SE_NODE_MAX_SESSIONS=1
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
@@ -46,7 +46,6 @@ services:
     ports:
       - "6903:5900"
       - "7903:7900"
-
 
   edge:
     image: selenium/node-edge:4.0.0-beta-3-20210426
